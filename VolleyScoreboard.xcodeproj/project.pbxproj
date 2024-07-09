@@ -21,6 +21,14 @@
 		9B6472982C3C8A5700D515FC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6472972C3C8A5700D515FC /* DateUtil.swift */; };
 		9B64729C2C3D856400D515FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64729B2C3D856400D515FC /* Launch Screen.storyboard */; };
 		9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */; };
+		9BE3689C2C3DC18300291218 /* VolleyScoreboardWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */; };
+		9BE3689E2C3DC18300291218 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3689D2C3DC18300291218 /* ScoreboardView.swift */; };
+		9BE368A02C3DC18400291218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE3689F2C3DC18400291218 /* Assets.xcassets */; };
+		9BE368A32C3DC18400291218 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE368A22C3DC18400291218 /* Preview Assets.xcassets */; };
+		9BE368AD2C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE368AC2C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppTests.swift */; };
+		9BE368B72C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE368B62C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift */; };
+		9BE368B92C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE368B82C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift */; };
+		9BE368BC2C3DC18400291218 /* VolleyScoreboardWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9BE626D72C36150E00B38BEE /* VolleyScoreboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */; };
 		9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D82C36150E00B38BEE /* GameListView.swift */; };
 		9BE626DD2C36150F00B38BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE626DC2C36150F00B38BEE /* Assets.xcassets */; };
@@ -31,6 +39,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9BE368A92C3DC18400291218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BE626CB2C36150E00B38BEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BE368982C3DC18300291218;
+			remoteInfo = "VolleyScoreboardWatch Watch App";
+		};
+		9BE368B32C3DC18400291218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BE626CB2C36150E00B38BEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BE368982C3DC18300291218;
+			remoteInfo = "VolleyScoreboardWatch Watch App";
+		};
+		9BE368BA2C3DC18400291218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BE626CB2C36150E00B38BEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BE368982C3DC18300291218;
+			remoteInfo = "VolleyScoreboardWatch Watch App";
+		};
 		9BE626E62C36150F00B38BEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9BE626CB2C36150E00B38BEE /* Project object */;
@@ -47,6 +76,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9BE368BD2C3DC18400291218 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9BE368BC2C3DC18400291218 /* VolleyScoreboardWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9B1DE70F2C3661F0001D25CE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9B1DE7112C366239001D25CE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -62,6 +105,16 @@
 		9B6472972C3C8A5700D515FC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		9B64729B2C3D856400D515FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VolleyScoreboardWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardWatchApp.swift; sourceTree = "<group>"; };
+		9BE3689D2C3DC18300291218 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		9BE3689F2C3DC18400291218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BE368A22C3DC18400291218 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BE368A82C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VolleyScoreboardWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE368AC2C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		9BE368B22C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VolleyScoreboardWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE368B62C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		9BE368B82C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BE626D32C36150E00B38BEE /* VolleyScoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyScoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardApp.swift; sourceTree = "<group>"; };
 		9BE626D82C36150E00B38BEE /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -75,6 +128,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9BE368962C3DC18300291218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368A52C3DC18400291218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368AF2C3DC18400291218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BE626D02C36150E00B38BEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,12 +173,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BE3689A2C3DC18300291218 /* VolleyScoreboardWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */,
+				9BE3689D2C3DC18300291218 /* ScoreboardView.swift */,
+				9BE3689F2C3DC18400291218 /* Assets.xcassets */,
+				9BE368A12C3DC18400291218 /* Preview Content */,
+			);
+			path = "VolleyScoreboardWatch Watch App";
+			sourceTree = "<group>";
+		};
+		9BE368A12C3DC18400291218 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9BE368A22C3DC18400291218 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BE368AB2C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BE368AC2C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppTests.swift */,
+			);
+			path = "VolleyScoreboardWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		9BE368B52C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9BE368B62C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift */,
+				9BE368B82C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "VolleyScoreboardWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		9BE626CA2C36150E00B38BEE = {
 			isa = PBXGroup;
 			children = (
 				9BE626D52C36150E00B38BEE /* VolleyScoreboard */,
 				9BE626E82C36150F00B38BEE /* VolleyScoreboardTests */,
 				9BE626F22C36150F00B38BEE /* VolleyScoreboardUITests */,
+				9BE3689A2C3DC18300291218 /* VolleyScoreboardWatch Watch App */,
+				9BE368AB2C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests */,
+				9BE368B52C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests */,
 				9BE626D42C36150E00B38BEE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +228,9 @@
 				9BE626D32C36150E00B38BEE /* VolleyScoreboard.app */,
 				9BE626E52C36150F00B38BEE /* VolleyScoreboardTests.xctest */,
 				9BE626EF2C36150F00B38BEE /* VolleyScoreboardUITests.xctest */,
+				9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */,
+				9BE368A82C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests.xctest */,
+				9BE368B22C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +288,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9BE368982C3DC18300291218 /* VolleyScoreboardWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BE368C42C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch App" */;
+			buildPhases = (
+				9BE368952C3DC18300291218 /* Sources */,
+				9BE368962C3DC18300291218 /* Frameworks */,
+				9BE368972C3DC18300291218 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VolleyScoreboardWatch Watch App";
+			productName = "VolleyScoreboardWatch Watch App";
+			productReference = 9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BE368A72C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BE368C52C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch AppTests" */;
+			buildPhases = (
+				9BE368A42C3DC18400291218 /* Sources */,
+				9BE368A52C3DC18400291218 /* Frameworks */,
+				9BE368A62C3DC18400291218 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BE368AA2C3DC18400291218 /* PBXTargetDependency */,
+			);
+			name = "VolleyScoreboardWatch Watch AppTests";
+			productName = "VolleyScoreboardWatch Watch AppTests";
+			productReference = 9BE368A82C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9BE368B12C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BE368C62C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch AppUITests" */;
+			buildPhases = (
+				9BE368AE2C3DC18400291218 /* Sources */,
+				9BE368AF2C3DC18400291218 /* Frameworks */,
+				9BE368B02C3DC18400291218 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BE368B42C3DC18400291218 /* PBXTargetDependency */,
+			);
+			name = "VolleyScoreboardWatch Watch AppUITests";
+			productName = "VolleyScoreboardWatch Watch AppUITests";
+			productReference = 9BE368B22C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9BE626D22C36150E00B38BEE /* VolleyScoreboard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BE626F92C36150F00B38BEE /* Build configuration list for PBXNativeTarget "VolleyScoreboard" */;
@@ -179,10 +348,12 @@
 				9BE626CF2C36150E00B38BEE /* Sources */,
 				9BE626D02C36150E00B38BEE /* Frameworks */,
 				9BE626D12C36150E00B38BEE /* Resources */,
+				9BE368BD2C3DC18400291218 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9BE368BB2C3DC18400291218 /* PBXTargetDependency */,
 			);
 			name = VolleyScoreboard;
 			productName = VolleyScoreboard;
@@ -235,6 +406,17 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					9BE368982C3DC18300291218 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					9BE368A72C3DC18400291218 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9BE368982C3DC18300291218;
+					};
+					9BE368B12C3DC18400291218 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9BE368982C3DC18300291218;
+					};
 					9BE626D22C36150E00B38BEE = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -264,11 +446,37 @@
 				9BE626D22C36150E00B38BEE /* VolleyScoreboard */,
 				9BE626E42C36150F00B38BEE /* VolleyScoreboardTests */,
 				9BE626EE2C36150F00B38BEE /* VolleyScoreboardUITests */,
+				9BE368982C3DC18300291218 /* VolleyScoreboardWatch Watch App */,
+				9BE368A72C3DC18400291218 /* VolleyScoreboardWatch Watch AppTests */,
+				9BE368B12C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9BE368972C3DC18300291218 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE368A32C3DC18400291218 /* Preview Assets.xcassets in Resources */,
+				9BE368A02C3DC18400291218 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368A62C3DC18400291218 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368B02C3DC18400291218 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BE626D12C36150E00B38BEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +504,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9BE368952C3DC18300291218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE3689E2C3DC18300291218 /* ScoreboardView.swift in Sources */,
+				9BE3689C2C3DC18300291218 /* VolleyScoreboardWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368A42C3DC18400291218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE368AD2C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE368AE2C3DC18400291218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE368B72C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift in Sources */,
+				9BE368B92C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BE626CF2C36150E00B38BEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +572,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9BE368AA2C3DC18400291218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BE368982C3DC18300291218 /* VolleyScoreboardWatch Watch App */;
+			targetProxy = 9BE368A92C3DC18400291218 /* PBXContainerItemProxy */;
+		};
+		9BE368B42C3DC18400291218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BE368982C3DC18300291218 /* VolleyScoreboardWatch Watch App */;
+			targetProxy = 9BE368B32C3DC18400291218 /* PBXContainerItemProxy */;
+		};
+		9BE368BB2C3DC18400291218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BE368982C3DC18300291218 /* VolleyScoreboardWatch Watch App */;
+			targetProxy = 9BE368BA2C3DC18400291218 /* PBXContainerItemProxy */;
+		};
 		9BE626E72C36150F00B38BEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9BE626D22C36150E00B38BEE /* VolleyScoreboard */;
@@ -351,6 +600,150 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9BE368BE2C3DC18400291218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VolleyScoreboardWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VolleyScoreboardWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.4DevsO.VolleyScoreboard;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.4DevsO.VolleyScoreboard.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		9BE368BF2C3DC18400291218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VolleyScoreboardWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VolleyScoreboardWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.4DevsO.VolleyScoreboard;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.4DevsO.VolleyScoreboard.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		9BE368C02C3DC18400291218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4DevsO.VolleyScoreboardWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VolleyScoreboardWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VolleyScoreboardWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		9BE368C12C3DC18400291218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4DevsO.VolleyScoreboardWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VolleyScoreboardWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VolleyScoreboardWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		9BE368C22C3DC18400291218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4DevsO.VolleyScoreboardWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "VolleyScoreboardWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		9BE368C32C3DC18400291218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPW5E75Z6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.4DevsO.VolleyScoreboardWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "VolleyScoreboardWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		9BE626F72C36150F00B38BEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,6 +866,7 @@
 		9BE626FA2C36150F00B38BEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -507,6 +901,7 @@
 		9BE626FB2C36150F00B38BEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -617,6 +1012,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9BE368C42C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE368BE2C3DC18400291218 /* Debug */,
+				9BE368BF2C3DC18400291218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BE368C52C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE368C02C3DC18400291218 /* Debug */,
+				9BE368C12C3DC18400291218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BE368C62C3DC18400291218 /* Build configuration list for PBXNativeTarget "VolleyScoreboardWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BE368C22C3DC18400291218 /* Debug */,
+				9BE368C32C3DC18400291218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9BE626CE2C36150E00B38BEE /* Build configuration list for PBXProject "VolleyScoreboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
