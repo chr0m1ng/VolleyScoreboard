@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1DE7102C3661F0001D25CE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE70F2C3661F0001D25CE /* Team.swift */; };
+		9B1DE7122C366239001D25CE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7112C366239001D25CE /* Game.swift */; };
+		9B1DE7142C3662BD001D25CE /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7132C3662BD001D25CE /* Scoreboard.swift */; };
+		9B1DE7162C366315001D25CE /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7152C366315001D25CE /* Point.swift */; };
+		9B1DE71A2C366B41001D25CE /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7192C366B41001D25CE /* GameSet.swift */; };
+		9B1DE71C2C36F168001D25CE /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE71B2C36F168001D25CE /* TeamListView.swift */; };
+		9B1DE71E2C36F219001D25CE /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE71D2C36F219001D25CE /* AppView.swift */; };
+		9B1DE7582C376547001D25CE /* NewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7572C376547001D25CE /* NewGameView.swift */; };
+		9B1DE75A2C37668C001D25CE /* TeamPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7592C37668C001D25CE /* TeamPickerView.swift */; };
+		9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */; };
+		9B1DE75E2C389AA0001D25CE /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */; };
+		9B6472982C3C8A5700D515FC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6472972C3C8A5700D515FC /* DateUtil.swift */; };
+		9B64729C2C3D856400D515FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64729B2C3D856400D515FC /* Launch Screen.storyboard */; };
+		9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */; };
 		9BE626D72C36150E00B38BEE /* VolleyScoreboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */; };
-		9BE626D92C36150E00B38BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D82C36150E00B38BEE /* ContentView.swift */; };
-		9BE626DB2C36150E00B38BEE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626DA2C36150E00B38BEE /* Item.swift */; };
+		9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D82C36150E00B38BEE /* GameListView.swift */; };
 		9BE626DD2C36150F00B38BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE626DC2C36150F00B38BEE /* Assets.xcassets */; };
 		9BE626E02C36150F00B38BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE626DF2C36150F00B38BEE /* Preview Assets.xcassets */; };
 		9BE626EA2C36150F00B38BEE /* VolleyScoreboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626E92C36150F00B38BEE /* VolleyScoreboardTests.swift */; };
@@ -35,10 +48,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1DE70F2C3661F0001D25CE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		9B1DE7112C366239001D25CE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9B1DE7132C3662BD001D25CE /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		9B1DE7152C366315001D25CE /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		9B1DE7192C366B41001D25CE /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
+		9B1DE71B2C36F168001D25CE /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
+		9B1DE71D2C36F219001D25CE /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		9B1DE7572C376547001D25CE /* NewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameView.swift; sourceTree = "<group>"; };
+		9B1DE7592C37668C001D25CE /* TeamPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPickerView.swift; sourceTree = "<group>"; };
+		9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetListView.swift; sourceTree = "<group>"; };
+		9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		9B6472972C3C8A5700D515FC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		9B64729B2C3D856400D515FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		9BE626D32C36150E00B38BEE /* VolleyScoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyScoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardApp.swift; sourceTree = "<group>"; };
-		9BE626D82C36150E00B38BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9BE626DA2C36150E00B38BEE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9BE626D82C36150E00B38BEE /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
 		9BE626DC2C36150F00B38BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BE626DF2C36150F00B38BEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BE626E52C36150F00B38BEE /* VolleyScoreboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolleyScoreboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,10 +123,23 @@
 			isa = PBXGroup;
 			children = (
 				9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */,
-				9BE626D82C36150E00B38BEE /* ContentView.swift */,
-				9BE626DA2C36150E00B38BEE /* Item.swift */,
+				9BE626D82C36150E00B38BEE /* GameListView.swift */,
 				9BE626DC2C36150F00B38BEE /* Assets.xcassets */,
 				9BE626DE2C36150F00B38BEE /* Preview Content */,
+				9B1DE70F2C3661F0001D25CE /* Team.swift */,
+				9B1DE7112C366239001D25CE /* Game.swift */,
+				9B1DE7132C3662BD001D25CE /* Scoreboard.swift */,
+				9B1DE7152C366315001D25CE /* Point.swift */,
+				9B1DE7192C366B41001D25CE /* GameSet.swift */,
+				9B1DE71B2C36F168001D25CE /* TeamListView.swift */,
+				9B1DE71D2C36F219001D25CE /* AppView.swift */,
+				9B1DE7572C376547001D25CE /* NewGameView.swift */,
+				9B1DE7592C37668C001D25CE /* TeamPickerView.swift */,
+				9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */,
+				9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */,
+				9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */,
+				9B6472972C3C8A5700D515FC /* DateUtil.swift */,
+				9B64729B2C3D856400D515FC /* Launch Screen.storyboard */,
 			);
 			path = VolleyScoreboard;
 			sourceTree = "<group>";
@@ -211,11 +250,11 @@
 			};
 			buildConfigurationList = 9BE626CE2C36150E00B38BEE /* Build configuration list for PBXProject "VolleyScoreboard" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 9BE626CA2C36150E00B38BEE;
 			productRefGroup = 9BE626D42C36150E00B38BEE /* Products */;
@@ -234,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B64729C2C3D856400D515FC /* Launch Screen.storyboard in Resources */,
 				9BE626E02C36150F00B38BEE /* Preview Assets.xcassets in Resources */,
 				9BE626DD2C36150F00B38BEE /* Assets.xcassets in Resources */,
 			);
@@ -260,9 +300,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BE626D92C36150E00B38BEE /* ContentView.swift in Sources */,
-				9BE626DB2C36150E00B38BEE /* Item.swift in Sources */,
+				9B1DE71A2C366B41001D25CE /* GameSet.swift in Sources */,
+				9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */,
+				9B1DE7102C3661F0001D25CE /* Team.swift in Sources */,
+				9B1DE7122C366239001D25CE /* Game.swift in Sources */,
+				9B1DE75A2C37668C001D25CE /* TeamPickerView.swift in Sources */,
+				9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */,
+				9B6472982C3C8A5700D515FC /* DateUtil.swift in Sources */,
+				9B1DE7142C3662BD001D25CE /* Scoreboard.swift in Sources */,
+				9B1DE7162C366315001D25CE /* Point.swift in Sources */,
 				9BE626D72C36150E00B38BEE /* VolleyScoreboardApp.swift in Sources */,
+				9B1DE7582C376547001D25CE /* NewGameView.swift in Sources */,
+				9B1DE71E2C36F219001D25CE /* AppView.swift in Sources */,
+				9B1DE75E2C389AA0001D25CE /* ScoreboardView.swift in Sources */,
+				9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */,
+				9B1DE71C2C36F168001D25CE /* TeamListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,9 +481,12 @@
 				DEVELOPMENT_TEAM = PPW5E75Z6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Placar de Volêi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,9 +513,12 @@
 				DEVELOPMENT_TEAM = PPW5E75Z6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Placar de Volêi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
