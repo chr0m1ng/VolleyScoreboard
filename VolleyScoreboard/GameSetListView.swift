@@ -20,37 +20,35 @@ struct GameSetListView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(game.sets.sorted(using: SortDescriptor(\GameSet.name)), id:\.id) { set in
-                        NavigationLink {
-                            ScoreboardView(scoreboard: set.scoreboard!)
-                        } label: {
-                            HStack (alignment: .center) {
+            List {
+                ForEach(game.sets.sorted(using: SortDescriptor(\GameSet.name)), id:\.id) { set in
+                    NavigationLink {
+                        ScoreboardView(scoreboard: set.scoreboard!)
+                    } label: {
+                        HStack (alignment: .center) {
+                            HStack {
+                                Label("", systemImage: set.isFinished ? "volleyball.fill" : "volleyball")
+                            }
+                            VStack(alignment: .listRowSeparatorLeading) {
                                 HStack {
-                                    Label("", systemImage: set.isFinished ? "volleyball.fill" : "volleyball")
-                                }
-                                VStack(alignment: .listRowSeparatorLeading) {
-                                    HStack {
-                                        Text(game.teamA.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamA)
-                                        Text("\(set.scoreboard!.teamAScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamA)
-                                    }
-                                    Divider()
-                                    HStack {
-                                        Text(game.teamB.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamB)
-                                        Text("\(set.scoreboard!.teamBScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamB)
-                                    }
+                                    Text(game.teamA.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamA)
+                                    Text("\(set.scoreboard!.teamAScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamA)
                                 }
                                 Divider()
-                                VStack (alignment: .leading) {
-                                    Text(set.name).font(.title3).bold().padding(.vertical)
-                                    HStack (alignment: .center) {
-                                        Label("", systemImage: set.isFinished ? "stopwatch.fill" : "stopwatch").font(.caption2)
-                                        VStack {
-                                            Text("\(set.startTime.printableString(.none, .short))").font(.caption)
-                                            if set.isFinished {
-                                                Text("\(set.endTime!.printableString(.none, .short))").font(.caption)
-                                            }
+                                HStack {
+                                    Text(game.teamB.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamB)
+                                    Text("\(set.scoreboard!.teamBScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamB)
+                                }
+                            }
+                            Divider()
+                            VStack (alignment: .leading) {
+                                Text(set.name).font(.title3).bold().padding(.vertical)
+                                HStack (alignment: .center) {
+                                    Label("", systemImage: set.isFinished ? "stopwatch.fill" : "stopwatch").font(.caption2)
+                                    VStack {
+                                        Text("\(set.startTime.printableString(.none, .short))").font(.caption)
+                                        if set.isFinished {
+                                            Text("\(set.endTime!.printableString(.none, .short))").font(.caption)
                                         }
                                     }
                                 }
@@ -58,28 +56,27 @@ struct GameSetListView: View {
                         }
                     }
                 }
-                Button(action: finishGame, label: {
-                    Text("Finalizar Jogo")
-                }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
-                .overlay(VStack {
-                    if self.game.sets.isEmpty {
-                        Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
-                        Text("Nenhum set iniciado").padding().font(.title)
-                        Button("Novo set", action: createGameSet).padding()
-                    }
-                })
-                .listRowSpacing(10)
-                .toolbar {
-                    ToolbarItem {
-                        Button(action: createGameSet) {
-                            Label("Novo set", systemImage: "plus")
-                        }.disabled(self.game.isFinished)
-                    }
-                }
-                .navigationTitle("Sets")
-                .navigationBarTitleDisplayMode(.large)
             }
-            
+            .overlay(VStack {
+                if self.game.sets.isEmpty {
+                    Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
+                    Text("Nenhum set iniciado").padding().font(.title)
+                    Button("Novo set", action: createGameSet).padding()
+                }
+            })
+            .listRowSpacing(10)
+            .toolbar {
+                ToolbarItem {
+                    Button(action: createGameSet) {
+                        Label("Novo set", systemImage: "plus")
+                    }.disabled(self.game.isFinished)
+                }
+            }
+            .navigationTitle("Sets")
+            .navigationBarTitleDisplayMode(.large)
+            Button(action: finishGame, label: {
+                Text("Finalizar Jogo")
+            }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
         }
     }
     
