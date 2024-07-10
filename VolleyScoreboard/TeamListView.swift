@@ -12,7 +12,9 @@ struct TeamListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Team.name) private var teams: [Team]
     @State private var teamName = ""
-    @State private var isPresented = false
+    @State private var isNewTeamPresented = false
+    @State private var isEditTeamPresented = false
+    @State private var selectedTeam: Team?
     
     var body: some View {
         NavigationStack {
@@ -20,7 +22,15 @@ struct TeamListView: View {
                 ForEach(teams, id: \.name) { team in
                     HStack (alignment: .lastTextBaseline) {
                         Text(team.name).frame(maxWidth: .infinity, alignment: .leading)
-                        Text("\(team.playedGames) (PJ) \(team.wins) (VIT) \(team.loses) (DER) \(team.ties) (E)").font(.caption2).frame(maxWidth: .infinity, alignment: .trailing)
+                        VStack (alignment: .trailing){
+                            Text("\(team.playedGames) (J) \(team.wins) (VIT) \(team.loses) (DER) \(team.ties) (E)").font(.caption2).frame(maxWidth: .infinity, alignment: .trailing)
+                            Text("\(team.playedSets) (SETS) \(team.setWins) (VIT) \(team.setLoses) (DER)").font(.caption2).frame(maxWidth: .infinity, alignment: .trailing)
+                        }
+                    }
+                    .onTapGesture {
+                        selectedTeam = team
+                        teamName = team.name
+                        isEditTeamPresented.toggle()
                     }
                 }
                 .onDelete(perform: deleteTeam)
@@ -29,17 +39,24 @@ struct TeamListView: View {
                 if teams.isEmpty {
                     Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
                     Text("Nenhum time adicionado").padding().font(.title)
-                    Button("Adicione um time", action: { isPresented.toggle() }).padding()
+                    Button("Adicione um time", action: { isNewTeamPresented.toggle() }).padding()
                 }
             })
             .toolbar {
                 ToolbarItem {
-                    Button(action: { isPresented.toggle() }) {
+                    Button(action: { isNewTeamPresented.toggle() }) {
                         Label("Novo time", systemImage: "plus")
                     }
                 }
             }
-            .alert("Novo time", isPresented: $isPresented) {
+            .alert("Editar time", isPresented: $isEditTeamPresented) {
+                TextField("Nome do time", text: $teamName)
+                Button("Salvar", action: editTeam)
+                Button("Cancelar", role: .cancel) {
+                    teamName = ""
+                }
+            }
+            .alert("Novo time", isPresented: $isNewTeamPresented) {
                 TextField("Nome do time", text: $teamName)
                 Button("Salvar", action: createTeam)
                 Button("Cancelar", role: .cancel) {
@@ -55,6 +72,13 @@ struct TeamListView: View {
         withAnimation {
             let newTeam = Team(name: teamName)
             modelContext.insert(newTeam)
+            teamName = ""
+        }
+    }
+    
+    private func editTeam() {
+        withAnimation {
+            selectedTeam!.name = teamName
             teamName = ""
         }
     }

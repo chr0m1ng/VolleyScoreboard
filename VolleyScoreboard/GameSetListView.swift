@@ -26,8 +26,10 @@ struct GameSetListView: View {
                         ScoreboardView(scoreboard: set.scoreboard!)
                     } label: {
                         HStack (alignment: .center) {
-                            HStack {
-                                Label("", systemImage: set.isFinished ? "volleyball.fill" : "volleyball")
+                            if set.isFinished {
+                                HStack {
+                                    Label("", systemImage: "volleyball.fill" )
+                                }
                             }
                             VStack(alignment: .listRowSeparatorLeading) {
                                 HStack {
@@ -74,9 +76,15 @@ struct GameSetListView: View {
             }
             .navigationTitle("Sets")
             .navigationBarTitleDisplayMode(.large)
-            Button(action: finishGame, label: {
-                Text("Finalizar Jogo")
-            }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
+            if game.isFinished {
+                Button(action: game.reopen, label: {
+                    Text("Reabrir Jogo")
+                }).buttonStyle(.borderedProminent).padding(.bottom)
+            } else {
+                Button(role: .destructive, action: finishGame, label: {
+                    Text("Finalizar Jogo")
+                }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
+            }
         }
     }
     

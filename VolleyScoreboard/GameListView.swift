@@ -23,8 +23,10 @@ struct GameListView: View {
                         GameSetListView(game: Bindable(game))
                     } label: {
                         HStack (alignment: .center) {
-                            HStack {
-                                Label("", systemImage: game.isFinished ? "volleyball.fill" : "volleyball")
+                            if game.isFinished {
+                                HStack {
+                                    Label("", systemImage: "volleyball.fill")
+                                }
                             }
                             VStack(alignment: .listRowSeparatorLeading) {
                                 HStack {

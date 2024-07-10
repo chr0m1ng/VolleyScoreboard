@@ -12,6 +12,7 @@ struct ScoreboardView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Bindable var scoreboard: Scoreboard
+    @State private var flipTeams = false
     
     var body: some View {
         NavigationStack {
@@ -19,53 +20,63 @@ struct ScoreboardView: View {
                 VStack {
                     HStack (alignment: .lastTextBaseline) {
                         Section {
-                            Text(self.scoreboard.teamA.name).font(.title)
+                            Text(teams.first!.name).font(.title)
                         }.frame(maxWidth: .infinity)
                         VStack {
-                            Image(systemName: "flag.2.crossed").font(.system(size: 30))
+                            Button{
+                                flipTeams.toggle()
+                            } label: {
+                                Image(systemName: "arrowshape.left.arrowshape.right").font(.title)
+                            }
                         }
                         Section {
-                            Text(self.scoreboard.teamB.name).font(.title)
+                            Text(teams.last!.name).font(.title)
                         }.frame(maxWidth: .infinity)
                     }.frame(maxWidth: .infinity).padding(.vertical)
-                    HStack {
-                        VStack {
-                            Button(action: addPointToA, label: {
-                                Text("+").frame(maxWidth: .infinity)
-                            }).disabled(self.scoreboard.gameSet!.isFinished)
-                                .buttonStyle(.borderedProminent)
-                            Text(String(self.scoreboard.teamAScore)).font(.title).padding()
-                            Button(action: removePointFromA, label: {
-                                Text("-").frame(maxWidth: .infinity)
-                            }).disabled(self.scoreboard.teamAScore == 0 || self.scoreboard.gameSet!.isFinished)
-                                .buttonStyle(.bordered)
-                        }.padding()
-                        VStack {
-                            Button(action: addPointToB, label: {
-                                Text("+").frame(maxWidth: .infinity)
-                            }).disabled(self.scoreboard.gameSet!.isFinished)
-                                .buttonStyle(.borderedProminent)
-                            Text(String(self.scoreboard.teamBScore)).font(.title).padding()
-                            Button(action: removePointFromB, label: {
-                                Text("-").frame(maxWidth: .infinity)
-                            }).disabled(self.scoreboard.teamBScore == 0 || self.scoreboard.gameSet!.isFinished)
-                                .buttonStyle(.bordered)
-                        }.padding()
-                    }.frame(maxWidth: .infinity)
+                    getScoreViews()
                     Spacer()
                     HStack {
-                        Button(action: finishSet, label: {
-                            Text("Finalizar Set").frame(maxWidth: .infinity)
-                        }).disabled(!self.scoreboard.canFinishSet || self.scoreboard.gameSet!.isFinished)
-                            .buttonStyle(.borderedProminent)
-                            .controlSize(.large)
-                            .padding()
+                        if scoreboard.gameSet!.isFinished {
+                            Button(action: scoreboard.gameSet!.reopen, label: {
+                                Text("Reabrir Set").frame(maxWidth: .infinity)
+                            })
+                                .buttonStyle(.borderedProminent)
+                                .controlSize(.large)
+                                .padding()
+                        } else {
+                            Button(role: .destructive, action: finishSet, label: {
+                                Text("Finalizar Set").frame(maxWidth: .infinity)
+                            }).disabled(!self.scoreboard.canFinishSet || self.scoreboard.gameSet!.isFinished)
+                                .buttonStyle(.borderedProminent)
+                                .controlSize(.large)
+                                .padding()
+                        }
                     }.padding().frame(maxWidth: .infinity)
                 }.frame(maxWidth: .infinity)
             }
             .padding(.top)
             .navigationTitle(scoreboard.gameSet!.name)
         }
+    }
+    
+    var teams: [Team] {
+        flipTeams
+        ? [scoreboard.teamB, scoreboard.teamA]
+        : [scoreboard.teamA, scoreboard.teamB]
+    }
+    
+    func getScoreViews() -> some View {
+        var scoreViews = [
+            ScoreView(addPointToTeam: addPointToA, removePointFromTeam: removePointFromA, isFinished: scoreboard.gameSet!.isFinished, teamScore: scoreboard.teamAScore),
+            ScoreView(addPointToTeam: addPointToB, removePointFromTeam: removePointFromB, isFinished: scoreboard.gameSet!.isFinished, teamScore: scoreboard.teamBScore)
+        ]
+        if flipTeams {
+            scoreViews.reverse()
+        }
+        return HStack {
+            scoreViews.first!
+            scoreViews.last!
+        }.frame(maxWidth: .infinity)
     }
     
     func canRemoveScore(score: Int) -> Bool {

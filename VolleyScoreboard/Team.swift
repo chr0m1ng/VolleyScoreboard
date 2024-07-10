@@ -23,6 +23,22 @@ class Team {
         self.games.filter({$0.winner == self}).count
     }
     
+    var playedSets: Int {
+        self.games.reduce(0, {acc, game in acc + game.sets.count})
+    }
+    
+    var setWins: Int {
+        self.games.reduce(0, {acc, game in
+            game.teamA == self
+            ? acc + game.score.teamA
+            : acc + game.score.teamB
+        })
+    }
+    
+    var setLoses: Int {
+        self.playedSets - self.setWins
+    }
+    
     var playedGames: Int {
         self.games.filter({$0.isFinished}).count
     }

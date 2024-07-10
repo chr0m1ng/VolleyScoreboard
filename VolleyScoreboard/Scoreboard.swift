@@ -57,7 +57,7 @@ class Scoreboard {
         self.points.append(point)
         
         if self.teamAScore == self.teamBScore && self.teamAScore == self.winnerScore - 1 {
-            self.winnerScore += 2
+            self.winnerScore += 1
         }
     }
 

@@ -41,4 +41,10 @@ class GameSet {
             ? self.game!.teamB : nil
         self.isFinished = true
     }
+    
+    func reopen() {
+        self.endTime = nil
+        self.winner = nil
+        self.isFinished = false
+    }
 }

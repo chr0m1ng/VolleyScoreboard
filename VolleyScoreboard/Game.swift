@@ -45,6 +45,12 @@ class Game {
         self.winner = score.teamA > score.teamB ? self.teamA : score.teamA < score.teamB ? self.teamB : nil
     }
     
+    func reopen() {
+        self.endDate = nil
+        self.isFinished = false
+        self.winner = nil
+    }
+    
     var score: FinalScore {
         let teamAWins = self.sets.filter({ $0.winner == self.teamA }).count
         let teamBWins = self.sets.filter({ $0.winner == self.teamB }).count
