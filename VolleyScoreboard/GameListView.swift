@@ -19,7 +19,6 @@ struct GameListView: View {
         NavigationStack {
             List {
                 ForEach(games, id:\.id) { game in
-                    Text("test")
                     NavigationLink {
                         GameSetListView(game: game)
                     } label: {
