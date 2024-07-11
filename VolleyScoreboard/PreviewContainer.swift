@@ -12,6 +12,7 @@ import SwiftData
 struct PreviewContainer {
     let scoreboard: Scoreboard
     let game: Game
+    let gameSet: GameSet
     let container: ModelContainer
     
     init() throws {
@@ -30,7 +31,7 @@ struct PreviewContainer {
         game = Game()
         container.mainContext.insert(game)
         game.teams.append(contentsOf: teams)
-        let gameSet = game.addGameSet(context: container.mainContext)
+        gameSet = game.addGameSet(context: container.mainContext)
         scoreboard = gameSet.scoreboard!
     }
 }

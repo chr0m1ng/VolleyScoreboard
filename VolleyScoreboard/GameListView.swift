@@ -19,40 +19,11 @@ struct GameListView: View {
         NavigationStack {
             List {
                 ForEach(games, id:\.id) { game in
+                    Text("test")
                     NavigationLink {
-                        GameSetListView(game: Bindable(game))
+                        GameSetListView(game: game)
                     } label: {
-                        HStack (alignment: .center) {
-                            if game.isFinished {
-                                HStack {
-                                    Label("", systemImage: "volleyball.fill")
-                                }
-                            }
-                            VStack(alignment: .listRowSeparatorLeading) {
-                                HStack {
-                                    Text(game.teamA.name).frame(maxWidth: .infinity, alignment: .leading).bold(game.winner == game.teamA)
-                                    Text("\(game.score.teamA)").frame(maxWidth: .infinity, alignment: .trailing).bold(game.winner == game.teamA)
-                                }
-                                Divider()
-                                HStack {
-                                    Text(game.teamB.name).frame(maxWidth: .infinity, alignment: .leading).bold(game.winner == game.teamB)
-                                    Text("\(game.score.teamB)").frame(maxWidth: .infinity, alignment: .trailing).bold(game.winner == game.teamB)
-                                }
-                            }
-                            Divider()
-                            HStack {
-                                Label("", systemImage: game.isFinished ? "stopwatch.fill" : "stopwatch").font(.caption)
-                                if game.isFinished {
-                                    VStack {
-                                        Text("\(game.startDate.printableString(.medium, .none))").font(.caption)
-                                        Text("\(game.startDate.printableString(.none, .short))").font(.caption)
-                                        Text("\(game.endDate!.printableString(.none, .short))").font(.caption)
-                                    }
-                                } else {
-                                    Text("\(game.startDate.printableString())").font(.caption)
-                                }
-                            }
-                        }
+                        GameListItemView(game: game)
                     }
                 }
                 .onDelete(perform: deleteGame)
@@ -71,6 +42,11 @@ struct GameListView: View {
             })
             .listRowSpacing(10)
             .toolbar {
+                ToolbarItem {
+                    Button(action: {}) {
+                        Label("Filtrar", systemImage: "")
+                    }
+                }
                 ToolbarItem {
                     Button(action: { isPresented.toggle() }) {
                         Label("Novo jogo", systemImage: "plus")

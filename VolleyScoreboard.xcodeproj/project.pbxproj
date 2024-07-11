@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B01A2842C4089F2002CE40B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2832C4089F2002CE40B /* ViewExtensions.swift */; };
+		9B01A2862C408A22002CE40B /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */; };
+		9B01A2882C4095AC002CE40B /* GameSetListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */; };
 		9B1DE7102C3661F0001D25CE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE70F2C3661F0001D25CE /* Team.swift */; };
 		9B1DE7122C366239001D25CE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7112C366239001D25CE /* Game.swift */; };
 		9B1DE7142C3662BD001D25CE /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7132C3662BD001D25CE /* Scoreboard.swift */; };
@@ -19,7 +22,8 @@
 		9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */; };
 		9B1DE75E2C389AA0001D25CE /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */; };
 		9B2751262C3F49F5007C759D /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2751252C3F49F5007C759D /* ScoreView.swift */; };
-		9B6472982C3C8A5700D515FC /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6472972C3C8A5700D515FC /* DateUtil.swift */; };
+		9B2751282C3F4F00007C759D /* GameListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2751272C3F4F00007C759D /* GameListItemView.swift */; };
+		9B6472982C3C8A5700D515FC /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6472972C3C8A5700D515FC /* DateExtensions.swift */; };
 		9B64729C2C3D856400D515FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64729B2C3D856400D515FC /* Launch Screen.storyboard */; };
 		9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */; };
 		9BE3689C2C3DC18300291218 /* VolleyScoreboardWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */; };
@@ -92,6 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B01A2832C4089F2002CE40B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
+		9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetListItemView.swift; sourceTree = "<group>"; };
 		9B1DE70F2C3661F0001D25CE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9B1DE7112C366239001D25CE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9B1DE7132C3662BD001D25CE /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
@@ -104,7 +111,8 @@
 		9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetListView.swift; sourceTree = "<group>"; };
 		9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		9B2751252C3F49F5007C759D /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		9B6472972C3C8A5700D515FC /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		9B2751272C3F4F00007C759D /* GameListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListItemView.swift; sourceTree = "<group>"; };
+		9B6472972C3C8A5700D515FC /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		9B64729B2C3D856400D515FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VolleyScoreboardWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +183,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B01A2822C4089B8002CE40B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B6472972C3C8A5700D515FC /* DateExtensions.swift */,
+				9B01A2832C4089F2002CE40B /* ViewExtensions.swift */,
+				9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		9BE3689A2C3DC18300291218 /* VolleyScoreboardWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +258,7 @@
 		9BE626D52C36150E00B38BEE /* VolleyScoreboard */ = {
 			isa = PBXGroup;
 			children = (
+				9B01A2822C4089B8002CE40B /* extensions */,
 				9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */,
 				9BE626D82C36150E00B38BEE /* GameListView.swift */,
 				9BE626DC2C36150F00B38BEE /* Assets.xcassets */,
@@ -257,8 +276,9 @@
 				9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */,
 				9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */,
 				9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */,
-				9B6472972C3C8A5700D515FC /* DateUtil.swift */,
 				9B64729B2C3D856400D515FC /* Launch Screen.storyboard */,
+				9B2751272C3F4F00007C759D /* GameListItemView.swift */,
+				9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */,
 			);
 			path = VolleyScoreboard;
 			sourceTree = "<group>";
@@ -537,14 +557,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B01A2882C4095AC002CE40B /* GameSetListItemView.swift in Sources */,
 				9B1DE71A2C366B41001D25CE /* GameSet.swift in Sources */,
 				9B2751262C3F49F5007C759D /* ScoreView.swift in Sources */,
 				9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */,
 				9B1DE7102C3661F0001D25CE /* Team.swift in Sources */,
+				9B01A2842C4089F2002CE40B /* ViewExtensions.swift in Sources */,
 				9B1DE7122C366239001D25CE /* Game.swift in Sources */,
+				9B2751282C3F4F00007C759D /* GameListItemView.swift in Sources */,
 				9B1DE75A2C37668C001D25CE /* TeamPickerView.swift in Sources */,
 				9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */,
-				9B6472982C3C8A5700D515FC /* DateUtil.swift in Sources */,
+				9B01A2862C408A22002CE40B /* UIScreenExtensions.swift in Sources */,
+				9B6472982C3C8A5700D515FC /* DateExtensions.swift in Sources */,
 				9B1DE7142C3662BD001D25CE /* Scoreboard.swift in Sources */,
 				9B1DE7162C366315001D25CE /* Point.swift in Sources */,
 				9BE626D72C36150E00B38BEE /* VolleyScoreboardApp.swift in Sources */,

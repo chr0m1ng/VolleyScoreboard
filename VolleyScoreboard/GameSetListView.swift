@@ -13,10 +13,6 @@ struct GameSetListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Bindable var game: Game
-    
-    init(game: Bindable<Game>){
-        self._game = game
-    }
 
     var body: some View {
         NavigationStack {
@@ -25,37 +21,7 @@ struct GameSetListView: View {
                     NavigationLink {
                         ScoreboardView(scoreboard: set.scoreboard!)
                     } label: {
-                        HStack (alignment: .center) {
-                            if set.isFinished {
-                                HStack {
-                                    Label("", systemImage: "volleyball.fill" )
-                                }
-                            }
-                            VStack(alignment: .listRowSeparatorLeading) {
-                                HStack {
-                                    Text(game.teamA.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamA)
-                                    Text("\(set.scoreboard!.teamAScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamA)
-                                }
-                                Divider()
-                                HStack {
-                                    Text(game.teamB.name).frame(maxWidth: .infinity, alignment: .leading).bold(set.winner == game.teamB)
-                                    Text("\(set.scoreboard!.teamBScore)").frame(maxWidth: .infinity, alignment: .trailing).bold(set.winner == game.teamB)
-                                }
-                            }
-                            Divider()
-                            VStack (alignment: .leading) {
-                                Text(set.name).font(.title3).bold().padding(.vertical)
-                                HStack (alignment: .center) {
-                                    Label("", systemImage: set.isFinished ? "stopwatch.fill" : "stopwatch").font(.caption2)
-                                    VStack {
-                                        Text("\(set.startTime.printableString(.none, .short))").font(.caption)
-                                        if set.isFinished {
-                                            Text("\(set.endTime!.printableString(.none, .short))").font(.caption)
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        GameSetListItemView(set: set)
                     }
                 }
             }
@@ -107,6 +73,6 @@ struct GameSetListView: View {
 
 #Preview {
     let previewer = try! PreviewContainer()
-    return GameSetListView(game: Bindable(previewer.game))
+    return GameSetListView(game: previewer.game)
         .modelContainer(previewer.container)
 }

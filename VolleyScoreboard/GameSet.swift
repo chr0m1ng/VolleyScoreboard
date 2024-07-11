@@ -26,6 +26,14 @@ class GameSet {
         self.name = "Set \(setNumber)"
     }
     
+    var teamA: Team? {
+        self.game?.teamA
+    }
+    
+    var teamB: Team? {
+        self.game?.teamB
+    }
+    
     @discardableResult
     func addScoreboard(context: ModelContext) -> Scoreboard {
         let scoreboard = Scoreboard(winnerScore: self.winnerScore)

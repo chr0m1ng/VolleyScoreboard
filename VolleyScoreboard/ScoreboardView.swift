@@ -26,7 +26,7 @@ struct ScoreboardView: View {
                             Button{
                                 flipTeams.toggle()
                             } label: {
-                                Image(systemName: "arrowshape.left.arrowshape.right").font(.title)
+                                Image(systemName: "arrow.left.arrow.right").font(.title)
                             }
                         }
                         Section {

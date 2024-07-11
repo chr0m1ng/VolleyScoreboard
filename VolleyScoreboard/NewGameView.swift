@@ -54,11 +54,3 @@ struct NewGameView: View {
         }
     }
 }
-
-extension View {
-    func newGameSheet(isPresented: Binding<Bool>) -> some View {
-        self.sheet(isPresented: isPresented) {
-            NewGameView()
-        }
-    }
-}
