@@ -15,18 +15,29 @@ struct TeamListView: View {
     @State private var isNewTeamPresented = false
     @State private var isEditTeamPresented = false
     @State private var selectedTeam: Team?
+    @State private var filterStartDate: Date = .now
+    @State private var filterEndDate: Date = .now
+    @State private var isFiltering = false
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(teams, id: \.name) { team in
-                    HStack (alignment: .lastTextBaseline) {
-                        Text(team.name).frame(maxWidth: .infinity, alignment: .leading)
-                        VStack (alignment: .trailing){
-                            Text("\(team.playedGames) (J) \(team.wins) (VIT) \(team.loses) (DER) \(team.ties) (E)").font(.caption2).frame(maxWidth: .infinity, alignment: .trailing)
-                            Text("\(team.playedSets) (SETS) \(team.setWins) (VIT) \(team.setLoses) (DER)").font(.caption2).frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                    }
+                if isFiltering {
+                    HStack {
+                        DatePicker("De", selection: $filterStartDate, displayedComponents: .date)
+                            .labelsHidden()
+                            .onChange(of: filterStartDate){
+                                if filterStartDate > filterEndDate {
+                                    filterEndDate = filterStartDate
+                                }
+                            }
+                        Image(systemName: "arrow.right")
+                        DatePicker("Até", selection: $filterEndDate, displayedComponents: .date)
+                            .labelsHidden()
+                    }.listRowBackground(Color.clear)
+                }
+                ForEach(filteredTeams, id: \.name) { team in
+                    TeamListItemView(team: team, filterStartDate: $filterStartDate, filterEndDate: $filterEndDate, isFiltering: $isFiltering)
                     .onTapGesture {
                         selectedTeam = team
                         teamName = team.name
@@ -35,6 +46,7 @@ struct TeamListView: View {
                 }
                 .onDelete(perform: deleteTeam)
             }
+            .listRowSpacing(10)
             .overlay(VStack {
                 if teams.isEmpty {
                     Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
@@ -43,6 +55,11 @@ struct TeamListView: View {
                 }
             })
             .toolbar {
+                ToolbarItem {
+                    Button(action: toogleDateFilter){
+                        Label("Filtrar", systemImage: isFiltering ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                    }
+                }
                 ToolbarItem {
                     Button(action: { isNewTeamPresented.toggle() }) {
                         Label("Novo time", systemImage: "plus")
@@ -68,6 +85,25 @@ struct TeamListView: View {
         }
     }
     
+    private var filteredTeams: [Team] {
+        teams.filter(filterTeamByDate)
+    }
+    
+    private func filterTeamByDate(team: Team) -> Bool {
+        if !isFiltering {
+            return true
+        }
+        return team.getPlayedGamesCount(filterStartDate, filterEndDate) > 0
+    }
+    
+    private func toogleDateFilter() {
+        isFiltering.toggle()
+        if !isFiltering {
+            filterStartDate = .now
+            filterEndDate = .now
+        }
+    }
+    
     private func createTeam() {
         withAnimation {
             let newTeam = Team(name: teamName)
@@ -86,10 +122,11 @@ struct TeamListView: View {
     private func deleteTeam(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                for game in teams[index].games {
+                let fixedIndex = teams.firstIndex(where: {$0.id == filteredTeams[index].id})!
+                for game in teams[fixedIndex].games {
                     modelContext.delete(game)
                 }
-                modelContext.delete(teams[index])
+                modelContext.delete(teams[fixedIndex])
             }
         }
     }

@@ -13,6 +13,7 @@ struct PreviewContainer {
     let scoreboard: Scoreboard
     let game: Game
     let gameSet: GameSet
+    let teams: [Team]
     let container: ModelContainer
     
     init() throws {
@@ -23,7 +24,7 @@ struct PreviewContainer {
         
         container = try ModelContainer(for: schema, configurations: [modelConfiguration])
 
-        let teams = [Team(name: "Time nome grande"), Team(name: "Test 2")]
+        teams = [Team(name: "Time nome grande"), Team(name: "Test 2")]
         for team in teams {
             container.mainContext.insert(team)
         }

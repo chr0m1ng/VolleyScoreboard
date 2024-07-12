@@ -49,5 +49,6 @@ struct GameListItemView: View {
 #Preview {
     let previewer = try! PreviewContainer()
 //    previewer.game.finish()
-    return List { GameListItemView(game: previewer.game) }.modelContainer(previewer.container)
+    return List { GameListItemView(game: previewer.game) }
+        .modelContainer(previewer.container)
 }

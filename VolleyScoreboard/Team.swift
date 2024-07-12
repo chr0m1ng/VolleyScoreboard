@@ -8,6 +8,16 @@
 import Foundation
 import SwiftData
 
+struct Leaderboard {
+    var playedGames: Int
+    var wins: Int
+    var loses: Int
+    var ties: Int
+    var playedSets: Int
+    var setWins: Int
+    var setLoses: Int
+}
+
 @Model
 class Team {
     @Attribute(.unique) 
@@ -19,35 +29,58 @@ class Team {
         self.name = name
     }
     
-    var wins: Int {
-        self.games.filter({$0.winner == self}).count
+    func getPlayedSets(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGames(startDate, endDate).reduce(0, {acc, game in acc + game.sets.count})
     }
     
-    var playedSets: Int {
-        self.games.reduce(0, {acc, game in acc + game.sets.count})
-    }
-    
-    var setWins: Int {
-        self.games.reduce(0, {acc, game in
+    func getSetWins(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGames(startDate, endDate).reduce(0, {acc, game in
             game.teamA == self
             ? acc + game.score.teamA
             : acc + game.score.teamB
         })
     }
     
-    var setLoses: Int {
-        self.playedSets - self.setWins
+    func getSetLoses(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedSets(startDate, endDate) - self.getSetWins(startDate, endDate)
     }
     
-    var playedGames: Int {
-        self.games.filter({$0.isFinished}).count
+    func getPlayedGames(_ startDate: Date?, _ endDate: Date?) -> [Game] {
+        let calendar = Calendar.autoupdatingCurrent
+        if startDate != nil && endDate != nil {
+            return games.filter({
+                calendar.startOfDay(for: $0.startDate) >= calendar.startOfDay(for: startDate!)
+                && calendar.startOfDay(for: $0.startDate) <= endDate!
+            })
+        }
+        return games
     }
     
-    var loses: Int {
-        self.games.filter({$0.isFinished && $0.winner != nil && $0.winner != self}).count
+    func getWins(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGames(startDate, endDate).filter({$0.winner == self}).count
     }
     
-    var ties: Int {
-        self.playedGames - self.wins - self.loses
+    func getPlayedGamesCount(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGames(startDate, endDate).filter({$0.isFinished}).count
+    }
+    
+    func getLoses(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGames(startDate, endDate).filter({$0.isFinished && $0.winner != nil && $0.winner != self}).count
+    }
+    
+    func getTies(_ startDate: Date?, _ endDate: Date?) -> Int {
+        return self.getPlayedGamesCount(startDate, endDate) - self.getWins(startDate, endDate) - self.getLoses(startDate, endDate)
+    }
+    
+    func getLeaderboard(_ startDate: Date?, _ endDate: Date?) -> Leaderboard {
+        return Leaderboard(
+            playedGames: getPlayedGamesCount(startDate, endDate),
+            wins: getWins(startDate, endDate),
+            loses: getLoses(startDate, endDate),
+            ties: getTies(startDate, endDate),
+            playedSets: getPlayedSets(startDate, endDate),
+            setWins: getSetWins(startDate, endDate),
+            setLoses: getSetLoses(startDate, endDate)
+        )
     }
 }

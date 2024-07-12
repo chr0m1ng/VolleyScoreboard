@@ -9,16 +9,36 @@ import SwiftUI
 import SwiftData
 
 struct GameListView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Game.startDate, order: .reverse) private var games: [Game]
-    @Query(sort: \Team.name) private var teams: [Team]
+    @Environment(\.modelContext)
+    private var modelContext
+    @Query(sort: \Game.startDate, order: .reverse)
+    private var games: [Game]
+    @Query(sort: \Team.name) 
+    private var teams: [Team]
     @State private var isPresented = false
+    @State private var filterStartDate: Date = .now
+    @State private var filterEndDate: Date = .now
+    @State private var isFiltering = false
     @Binding var tabSelection: Int
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(games, id:\.id) { game in
+                if isFiltering {
+                    HStack {
+                        DatePicker("De", selection: $filterStartDate, displayedComponents: .date)
+                            .labelsHidden()
+                            .onChange(of: filterStartDate){
+                                if filterStartDate > filterEndDate {
+                                    filterEndDate = filterStartDate
+                                }
+                            }
+                        Image(systemName: "arrow.right")
+                        DatePicker("Até", selection: $filterEndDate, displayedComponents: .date)
+                            .labelsHidden()
+                    }.listRowBackground(Color.clear)
+                }
+                ForEach(filteredGames, id:\.id) { game in
                     NavigationLink {
                         GameSetListView(game: game)
                     } label: {
@@ -42,8 +62,8 @@ struct GameListView: View {
             .listRowSpacing(10)
             .toolbar {
                 ToolbarItem {
-                    Button(action: {}) {
-                        Label("Filtrar", systemImage: "")
+                    Button(action: toogleDateFilter){
+                        Label("Filtrar", systemImage: isFiltering ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
                     }
                 }
                 ToolbarItem {
@@ -57,21 +77,43 @@ struct GameListView: View {
             .navigationBarTitleDisplayMode(.large)
         }
     }
-
     
-    var isNewGameDisabled: Bool {
+    private var filteredGames: [Game] {
+        games.filter(filterGameByDate)
+    }
+    
+    private func toogleDateFilter() {
+        isFiltering.toggle()
+        if !isFiltering {
+            filterStartDate = .now
+            filterEndDate = .now
+        }
+    }
+    
+    private func filterGameByDate(game: Game) -> Bool {
+        if !isFiltering {
+            return true
+        }
+        let calendar = Calendar.autoupdatingCurrent
+        return calendar.startOfDay(for: game.startDate) >= calendar.startOfDay(for: filterStartDate) 
+            && calendar.startOfDay(for: game.startDate) <= filterEndDate
+        
+    }
+    
+    private var isNewGameDisabled: Bool {
         teams.count < 2
     }
 
     private func deleteGame(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
+                let fixedIndex = games.firstIndex(where: {$0.id == filteredGames[index].id })!
                 // SwiftData is not updating the team.games so this remove the game manually
-                for team in games[index].teams {
-                    let gameIndex = team.games.firstIndex(where: { $0.id == games[index].id })
-                    team.games.remove(at: gameIndex!)
+                for team in games[fixedIndex].teams {
+                    let teamGameIndex = team.games.firstIndex(where: { $0.id == games[fixedIndex].id })
+                    team.games.remove(at: teamGameIndex!)
                 }
-                modelContext.delete(games[index])
+                modelContext.delete(games[fixedIndex])
             }
         }
     }

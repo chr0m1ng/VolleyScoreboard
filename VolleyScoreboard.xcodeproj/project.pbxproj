@@ -10,6 +10,7 @@
 		9B01A2842C4089F2002CE40B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2832C4089F2002CE40B /* ViewExtensions.swift */; };
 		9B01A2862C408A22002CE40B /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */; };
 		9B01A2882C4095AC002CE40B /* GameSetListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */; };
+		9B01A28D2C40D31E002CE40B /* TeamListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01A28C2C40D31E002CE40B /* TeamListItemView.swift */; };
 		9B1DE7102C3661F0001D25CE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE70F2C3661F0001D25CE /* Team.swift */; };
 		9B1DE7122C366239001D25CE /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7112C366239001D25CE /* Game.swift */; };
 		9B1DE7142C3662BD001D25CE /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1DE7132C3662BD001D25CE /* Scoreboard.swift */; };
@@ -99,6 +100,8 @@
 		9B01A2832C4089F2002CE40B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
 		9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetListItemView.swift; sourceTree = "<group>"; };
+		9B01A2892C40A38B002CE40B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		9B01A28C2C40D31E002CE40B /* TeamListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListItemView.swift; sourceTree = "<group>"; };
 		9B1DE70F2C3661F0001D25CE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9B1DE7112C366239001D25CE /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		9B1DE7132C3662BD001D25CE /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 		9BE368B52C3DC18400291218 /* VolleyScoreboardWatch Watch AppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9B01A2892C40A38B002CE40B /* .gitignore */,
 				9BE368B62C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITests.swift */,
 				9BE368B82C3DC18400291218 /* VolleyScoreboardWatch_Watch_AppUITestsLaunchTests.swift */,
 			);
@@ -279,6 +283,7 @@
 				9B64729B2C3D856400D515FC /* Launch Screen.storyboard */,
 				9B2751272C3F4F00007C759D /* GameListItemView.swift */,
 				9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */,
+				9B01A28C2C40D31E002CE40B /* TeamListItemView.swift */,
 			);
 			path = VolleyScoreboard;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				9B1DE7122C366239001D25CE /* Game.swift in Sources */,
 				9B2751282C3F4F00007C759D /* GameListItemView.swift in Sources */,
 				9B1DE75A2C37668C001D25CE /* TeamPickerView.swift in Sources */,
+				9B01A28D2C40D31E002CE40B /* TeamListItemView.swift in Sources */,
 				9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */,
 				9B01A2862C408A22002CE40B /* UIScreenExtensions.swift in Sources */,
 				9B6472982C3C8A5700D515FC /* DateExtensions.swift in Sources */,
