@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameListItemView: View {
-    @Bindable var game: Game
+    var game: Game
 
     var body: some View {
         HStack {
