@@ -20,6 +20,7 @@ struct ScoreView: View {
             }).disabled(isFinished)
                 .buttonStyle(.borderedProminent)
             Text(String(teamScore)).font(.title).padding()
+                .contentTransition(.numericText()).animation(.spring(duration: 0.2), value: teamScore)
             Button(action: removePointFromTeam, label: {
                 Text("-").frame(maxWidth: .infinity)
             }).disabled(teamScore == 0 || isFinished)

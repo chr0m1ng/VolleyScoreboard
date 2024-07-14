@@ -21,6 +21,7 @@ struct VolleyScoreboardWidgetLiveActivity: Widget {
                     VStack {
                         Text(context.attributes.teamAName).font(.title)
                         Text(String(context.state.teamAScore)).font(.title2)
+                            .contentTransition(.numericText()).animation(.spring(duration: 0.2), value: context.state.teamAScore)
                     }.frame(maxWidth: .infinity)
                 }
                 DynamicIslandExpandedRegion (.center) {
@@ -30,6 +31,7 @@ struct VolleyScoreboardWidgetLiveActivity: Widget {
                     VStack {
                         Text(context.attributes.teamBName).font(.title)
                         Text(String(context.state.teamBScore)).font(.title2)
+                            .contentTransition(.numericText()).animation(.spring(duration: 0.2), value: context.state.teamBScore)
                     }.frame(maxWidth: .infinity)
                 }
             } compactLeading: {

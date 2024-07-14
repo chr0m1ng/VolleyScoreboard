@@ -16,11 +16,13 @@ struct ScoreboardLiveActivityView: View {
             VStack {
                 Text(context.attributes.teamAName).font(.title2).bold()
                 Text(String(context.state.teamAScore)).font(.title3)
+                    .contentTransition(.numericText()).animation(.spring(duration: 0.2), value: context.state.teamAScore)
             }.frame(maxWidth: .infinity)
             Image(systemName: "volleyball.fill").font(.title).padding(.horizontal)
             VStack {
                 Text(context.attributes.teamBName).font(.title2).bold()
                 Text(String(context.state.teamBScore)).font(.title3)
+                    .contentTransition(.numericText()).animation(.spring(duration: 0.2), value: context.state.teamBScore)
             }.frame(maxWidth: .infinity)
         }.padding()
     }

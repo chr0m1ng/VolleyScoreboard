@@ -18,9 +18,10 @@ struct ScoreboardView: View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    HStack (alignment: .lastTextBaseline) {
+                    HStack (alignment: .firstTextBaseline) {
                         Section {
                             Text(teams.first!.name).font(.title)
+                                .animation(.easeInOut(duration: 0.5), value: teams.first!.name)
                         }.frame(maxWidth: .infinity)
                         VStack {
                             Button{
@@ -31,6 +32,7 @@ struct ScoreboardView: View {
                         }
                         Section {
                             Text(teams.last!.name).font(.title)
+                                .animation(.easeInOut(duration: 0.5), value: teams.last!.name)
                         }.frame(maxWidth: .infinity)
                     }.frame(maxWidth: .infinity).padding(.vertical)
                     getScoreViews()
