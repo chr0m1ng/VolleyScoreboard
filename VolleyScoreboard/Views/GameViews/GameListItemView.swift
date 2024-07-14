@@ -46,7 +46,7 @@ struct GameListItemView: View {
     }
 }
 
-#Preview {
+#Preview {@MainActor in
     let previewer = try! PreviewContainer()
 //    previewer.game.finish()
     return List { GameListItemView(game: previewer.game) }

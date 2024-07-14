@@ -40,6 +40,11 @@ class Game {
     }
     
     func finish() {
+        for set in sets {
+            if !set.isFinished {
+                set.finish()
+            }
+        }
         self.endDate = .now
         self.isFinished = true
         self.winner = score.teamA > score.teamB ? self.teamA : score.teamA < score.teamB ? self.teamB : nil

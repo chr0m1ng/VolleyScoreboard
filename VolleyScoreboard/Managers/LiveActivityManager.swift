@@ -16,11 +16,15 @@ final class LiveActivityManager {
         let scoreAttributes = ScoreboardContext(teamAName: teamAName, teamBName: teamBName)
         let currentState = ScoreboardContext.ContentState(teamAScore: teamAScore, teamBScore: teamBScore)
         let content = ActivityContent(state: currentState, staleDate: nil, relevanceScore: relevanceScore)
-        scoreActivity = try! Activity.request(
-            attributes: scoreAttributes,
-            content: content,
-            pushType: nil
-        )
+        do {
+            scoreActivity = try Activity.request(
+                attributes: scoreAttributes,
+                content: content,
+                pushType: nil
+            )
+        } catch {
+            print(error)
+        }
     }
     
     func update(teamAScore: Int, teamBScore: Int) async {
