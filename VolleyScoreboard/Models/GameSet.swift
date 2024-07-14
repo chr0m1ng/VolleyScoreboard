@@ -44,6 +44,10 @@ class GameSet {
             teamBName: teamB!.name, teamBScore: 0,
             relevanceScore: Double(game!.sets.count)
         )
+        WatchConnectivityManager.shared.sendScoreboardStatusToWatch(scoreboardStatus: ScoreboardStatus(
+            teamAName: teamA!.name, teamAScore: 0,
+            teamBName: teamB!.name, teamBScore: 0
+        ))
         return scoreboard
     }
 

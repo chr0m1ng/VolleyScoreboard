@@ -53,6 +53,13 @@ class Scoreboard {
     private func updateLiveActivityStatus() async {
         await LiveActivityManager.shared.update(teamAScore: teamAScore, teamBScore: teamBScore)
     }
+    
+    private func updateAppleWatchApp() {
+        WatchConnectivityManager.shared.sendScoreboardStatusToWatch(scoreboardStatus: ScoreboardStatus(
+            teamAName: teamA.name, teamAScore: teamAScore,
+            teamBName: teamB.name, teamBScore: teamBScore
+        ))
+    }
 
     private func addTeamPoint(team: Team, context: ModelContext) {
         let point = Point()
@@ -65,6 +72,7 @@ class Scoreboard {
         }
 
         Task { await updateLiveActivityStatus() }
+        updateAppleWatchApp()
     }
 
     func addPointToA(context: ModelContext) {
@@ -80,6 +88,7 @@ class Scoreboard {
         context.delete(self.points.remove(at: self.points.firstIndex(where: { $0.id == pointId })!))
 
         Task{ await updateLiveActivityStatus() }
+        updateAppleWatchApp()
     }
 
     func removePointFromA(context: ModelContext) {
