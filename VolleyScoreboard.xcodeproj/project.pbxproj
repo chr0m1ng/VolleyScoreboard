@@ -26,6 +26,7 @@
 		9B2751282C3F4F00007C759D /* GameListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2751272C3F4F00007C759D /* GameListItemView.swift */; };
 		9B6472982C3C8A5700D515FC /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6472972C3C8A5700D515FC /* DateExtensions.swift */; };
 		9B64729C2C3D856400D515FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B64729B2C3D856400D515FC /* Launch Screen.storyboard */; };
+		9B982AEC2C4341DB00E63B43 /* DateSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B982AEB2C4341DB00E63B43 /* DateSeparatorView.swift */; };
 		9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */; };
 		9BE3689C2C3DC18300291218 /* VolleyScoreboardWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */; };
 		9BE3689E2C3DC18300291218 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3689D2C3DC18300291218 /* ScoreboardView.swift */; };
@@ -117,6 +118,7 @@
 		9B2751272C3F4F00007C759D /* GameListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListItemView.swift; sourceTree = "<group>"; };
 		9B6472972C3C8A5700D515FC /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		9B64729B2C3D856400D515FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9B982AEB2C4341DB00E63B43 /* DateSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSeparatorView.swift; sourceTree = "<group>"; };
 		9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		9BE368992C3DC18300291218 /* VolleyScoreboardWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VolleyScoreboardWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE3689B2C3DC18300291218 /* VolleyScoreboardWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardWatchApp.swift; sourceTree = "<group>"; };
@@ -186,14 +188,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B01A2822C4089B8002CE40B /* extensions */ = {
+		9B01A2822C4089B8002CE40B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9B6472972C3C8A5700D515FC /* DateExtensions.swift */,
 				9B01A2832C4089F2002CE40B /* ViewExtensions.swift */,
 				9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */,
 			);
-			path = extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B982AE42C433DE200E63B43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B1DE70F2C3661F0001D25CE /* Team.swift */,
+				9B1DE7112C366239001D25CE /* Game.swift */,
+				9B1DE7132C3662BD001D25CE /* Scoreboard.swift */,
+				9B1DE7152C366315001D25CE /* Point.swift */,
+				9B1DE7192C366B41001D25CE /* GameSet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B982AE52C433E1900E63B43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B982AEA2C4341CA00E63B43 /* ListViews */,
+				9B982AE92C433E8300E63B43 /* ScoreboardViews */,
+				9B982AE82C433E6200E63B43 /* TeamViews */,
+				9B982AE72C433E4700E63B43 /* GameSetViews */,
+				9B982AE62C433E2700E63B43 /* GameViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B982AE62C433E2700E63B43 /* GameViews */ = {
+			isa = PBXGroup;
+			children = (
+				9BE626D82C36150E00B38BEE /* GameListView.swift */,
+				9B1DE7572C376547001D25CE /* NewGameView.swift */,
+				9B2751272C3F4F00007C759D /* GameListItemView.swift */,
+			);
+			path = GameViews;
+			sourceTree = "<group>";
+		};
+		9B982AE72C433E4700E63B43 /* GameSetViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */,
+				9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */,
+			);
+			path = GameSetViews;
+			sourceTree = "<group>";
+		};
+		9B982AE82C433E6200E63B43 /* TeamViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B1DE71B2C36F168001D25CE /* TeamListView.swift */,
+				9B01A28C2C40D31E002CE40B /* TeamListItemView.swift */,
+				9B1DE7592C37668C001D25CE /* TeamPickerView.swift */,
+			);
+			path = TeamViews;
+			sourceTree = "<group>";
+		};
+		9B982AE92C433E8300E63B43 /* ScoreboardViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B2751252C3F49F5007C759D /* ScoreView.swift */,
+				9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */,
+			);
+			path = ScoreboardViews;
+			sourceTree = "<group>";
+		};
+		9B982AEA2C4341CA00E63B43 /* ListViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B982AEB2C4341DB00E63B43 /* DateSeparatorView.swift */,
+			);
+			path = ListViews;
 			sourceTree = "<group>";
 		};
 		9BE3689A2C3DC18300291218 /* VolleyScoreboardWatch Watch App */ = {
@@ -262,28 +334,15 @@
 		9BE626D52C36150E00B38BEE /* VolleyScoreboard */ = {
 			isa = PBXGroup;
 			children = (
-				9B01A2822C4089B8002CE40B /* extensions */,
+				9B982AE52C433E1900E63B43 /* Views */,
+				9B982AE42C433DE200E63B43 /* Models */,
+				9B01A2822C4089B8002CE40B /* Extensions */,
 				9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */,
-				9BE626D82C36150E00B38BEE /* GameListView.swift */,
+				9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */,
 				9BE626DC2C36150F00B38BEE /* Assets.xcassets */,
 				9BE626DE2C36150F00B38BEE /* Preview Content */,
-				9B1DE70F2C3661F0001D25CE /* Team.swift */,
-				9B1DE7112C366239001D25CE /* Game.swift */,
-				9B1DE7132C3662BD001D25CE /* Scoreboard.swift */,
-				9B1DE7152C366315001D25CE /* Point.swift */,
-				9B1DE7192C366B41001D25CE /* GameSet.swift */,
-				9B1DE71B2C36F168001D25CE /* TeamListView.swift */,
 				9B1DE71D2C36F219001D25CE /* AppView.swift */,
-				9B1DE7572C376547001D25CE /* NewGameView.swift */,
-				9B2751252C3F49F5007C759D /* ScoreView.swift */,
-				9B1DE7592C37668C001D25CE /* TeamPickerView.swift */,
-				9B1DE75B2C3849AE001D25CE /* GameSetListView.swift */,
-				9B1DE75D2C389AA0001D25CE /* ScoreboardView.swift */,
-				9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */,
 				9B64729B2C3D856400D515FC /* Launch Screen.storyboard */,
-				9B2751272C3F4F00007C759D /* GameListItemView.swift */,
-				9B01A2872C4095AC002CE40B /* GameSetListItemView.swift */,
-				9B01A28C2C40D31E002CE40B /* TeamListItemView.swift */,
 			);
 			path = VolleyScoreboard;
 			sourceTree = "<group>";
@@ -566,6 +625,7 @@
 				9B1DE71A2C366B41001D25CE /* GameSet.swift in Sources */,
 				9B2751262C3F49F5007C759D /* ScoreView.swift in Sources */,
 				9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */,
+				9B982AEC2C4341DB00E63B43 /* DateSeparatorView.swift in Sources */,
 				9B1DE7102C3661F0001D25CE /* Team.swift in Sources */,
 				9B01A2842C4089F2002CE40B /* ViewExtensions.swift in Sources */,
 				9B1DE7122C366239001D25CE /* Game.swift in Sources */,

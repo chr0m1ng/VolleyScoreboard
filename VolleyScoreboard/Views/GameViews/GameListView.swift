@@ -38,7 +38,10 @@ struct GameListView: View {
                             .labelsHidden()
                     }.listRowBackground(Color.clear)
                 }
-                ForEach(filteredGames, id:\.id) { game in
+                ForEach(Array(zip(filteredGames.indices, filteredGames)), id:\.1.id) { index, game in
+                    if index != 0 && !filteredGames[index - 1].startDate.isSameDay(date: game.startDate) {
+                        DateSeparatorView(date: game.startDate)
+                    }
                     NavigationLink {
                         GameSetListView(game: game)
                     } label: {
