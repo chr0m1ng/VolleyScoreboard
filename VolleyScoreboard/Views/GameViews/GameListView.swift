@@ -114,7 +114,6 @@ struct GameListView: View {
                 // SwiftData is not updating the team.games so this remove the game manually
                 for team in games[fixedIndex].teams {
                     let teamGameIndex = team.games.firstIndex(where: { $0.id == games[fixedIndex].id })
-                    team.games[teamGameIndex!].finish()
                     team.games.remove(at: teamGameIndex!)
                 }
                 modelContext.delete(games[fixedIndex])

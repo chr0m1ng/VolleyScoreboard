@@ -60,6 +60,11 @@ struct GameSetListView: View {
     
     func finishGame() {
         withAnimation {
+            for set in self.game.sets {
+                if !set.isFinished {
+                    set.finish()
+                }
+            }
             self.game.finish()
             dismiss()
         }
