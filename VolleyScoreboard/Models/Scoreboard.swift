@@ -49,6 +49,10 @@ class Scoreboard {
     var teamBScore: Int {
         get { return teamBPoints.count }
     }
+    
+    private func updateLiveActivityStatus() async {
+        await LiveActivityManager.shared.update(teamAScore: teamAScore, teamBScore: teamBScore)
+    }
 
     private func addTeamPoint(team: Team, context: ModelContext) {
         let point = Point()
@@ -59,6 +63,8 @@ class Scoreboard {
         if self.teamAScore == self.teamBScore && self.teamAScore == self.winnerScore - 1 {
             self.winnerScore += 1
         }
+
+        Task { await updateLiveActivityStatus() }
     }
 
     func addPointToA(context: ModelContext) {
@@ -72,6 +78,8 @@ class Scoreboard {
     private func removePointFromTeam(teamPoints: [Point], context: ModelContext) {
         let pointId: PersistentIdentifier = teamPoints.last!.id
         context.delete(self.points.remove(at: self.points.firstIndex(where: { $0.id == pointId })!))
+
+        Task{ await updateLiveActivityStatus() }
     }
 
     func removePointFromA(context: ModelContext) {

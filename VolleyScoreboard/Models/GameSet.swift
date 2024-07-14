@@ -39,6 +39,11 @@ class GameSet {
         let scoreboard = Scoreboard(winnerScore: self.winnerScore)
         context.insert(scoreboard)
         self.scoreboard = scoreboard
+        LiveActivityManager.shared.start(
+            teamAName: teamA!.name, teamAScore: 0,
+            teamBName: teamB!.name, teamBScore: 0,
+            relevanceScore: Double(game!.sets.count)
+        )
         return scoreboard
     }
 
@@ -48,6 +53,9 @@ class GameSet {
             ? self.game!.teamA : self.scoreboard!.teamAScore < self.scoreboard!.teamBScore
             ? self.game!.teamB : nil
         self.isFinished = true
+        Task {
+            await LiveActivityManager.shared.end(teamAScore: scoreboard!.teamAScore, teamBScore: scoreboard!.teamBScore)
+        }
     }
     
     func reopen() {
