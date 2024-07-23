@@ -11,6 +11,7 @@ import WatchConnectivity
 final class WatchConnectivityManager: NSObject, WCSessionDelegate, ObservableObject {
     static let shared = WatchConnectivityManager()
     var session: WCSession
+    var lastScoreboardStatus = ScoreboardStatus()
     
     init(session: WCSession = .default) {
         self.session = session
@@ -19,16 +20,22 @@ final class WatchConnectivityManager: NSObject, WCSessionDelegate, ObservableObj
         session.activate()
     }
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
-        
-    }
-    
     func sessionDidBecomeInactive(_ session: WCSession) {
         
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
         
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if message["request"] as! String == "score" {
+            replyHandler(lastScoreboardStatus.serialize())
+        }
     }
     
     private func updateApplicationContext(with context: [String: Any]) {
@@ -40,8 +47,10 @@ final class WatchConnectivityManager: NSObject, WCSessionDelegate, ObservableObj
     }
     
     func sendScoreboardStatusToWatch(scoreboardStatus: ScoreboardStatus) {
+        lastScoreboardStatus.updateFromDeserializedData(scoreboardStatus)
         if session.isReachable {
-            updateApplicationContext(with: scoreboardStatus.toApplicationContext())
+            let update = scoreboardStatus.serialize()
+            updateApplicationContext(with: update)
         } else {
             print("Session not reachable")
         }

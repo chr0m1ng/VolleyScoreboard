@@ -54,11 +54,13 @@ class Scoreboard {
         await LiveActivityManager.shared.update(teamAScore: teamAScore, teamBScore: teamBScore)
     }
     
-    private func updateAppleWatchApp() {
-        WatchConnectivityManager.shared.sendScoreboardStatusToWatch(scoreboardStatus: ScoreboardStatus(
-            teamAName: teamA.name, teamAScore: teamAScore,
-            teamBName: teamB.name, teamBScore: teamBScore
-        ))
+    func updateAppleWatchApp() {
+        let watchScore = ScoreboardStatus()
+        watchScore.teamAName = teamA.name
+        watchScore.teamAScore = teamAScore
+        watchScore.teamBName = teamB.name
+        watchScore.teamBScore = teamBScore
+        WatchConnectivityManager.shared.sendScoreboardStatusToWatch(scoreboardStatus: watchScore)
     }
 
     private func addTeamPoint(team: Team, context: ModelContext) {

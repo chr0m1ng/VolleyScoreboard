@@ -30,6 +30,9 @@ struct ContentView: View {
         }.padding()
         .onAppear(){
             self.connectivityManager.scoreboardUpdateHandler = handleScoreUpdate
+            connectivityManager.requestScoreboard()
+        }.onTapGesture {
+            connectivityManager.requestScoreboard()
         }
     }
     

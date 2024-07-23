@@ -58,7 +58,7 @@ struct ScoreboardView: View {
             }
             .padding(.top)
             .navigationTitle(scoreboard.gameSet!.name)
-        }
+        }.onAppear(perform: self.scoreboard.updateAppleWatchApp)
     }
     
     var teams: [Team] {

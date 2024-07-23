@@ -7,13 +7,15 @@
 
 import Foundation
 
-struct ScoreboardStatus {
-    let teamAName: String
-    let teamAScore: Int
-    let teamBName: String
-    let teamBScore: Int
+class ScoreboardStatus {
+    static let shared = ScoreboardStatus()
     
-    func toApplicationContext() -> [String: Any] {
+    var teamAName: String = "Team A"
+    var teamAScore: Int = 0
+    var teamBName: String = "Team B"
+    var teamBScore: Int = 0
+    
+    func serialize() -> [String: Any] {
         return [
             "teamAName": self.teamAName,
             "teamAScore": self.teamAScore,
@@ -22,12 +24,17 @@ struct ScoreboardStatus {
         ]
     }
     
-    static func fromApplicationContext(_ applicationContext: [String: Any]) -> ScoreboardStatus {
-        return ScoreboardStatus(
-            teamAName: applicationContext["teamAName"] as! String,
-            teamAScore: applicationContext["teamAScore"] as! Int,
-            teamBName: applicationContext["teamBName"] as! String,
-            teamBScore: applicationContext["teamBScore"] as! Int
-        )
+    func updateFromSerializedData(_ data: [String: Any]) {
+        self.teamAName = data["teamAName"] as! String
+        self.teamAScore = data["teamAScore"] as! Int
+        self.teamBName = data["teamBName"] as! String
+        self.teamBScore = data["teamBScore"] as! Int
+    }
+    
+    func updateFromDeserializedData(_ data: ScoreboardStatus) {
+        self.teamAName = data.teamAName
+        self.teamAScore = data.teamAScore
+        self.teamBName = data.teamBName
+        self.teamBScore = data.teamBScore
     }
 }

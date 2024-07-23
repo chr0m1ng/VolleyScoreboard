@@ -7,8 +7,11 @@
 
 import Foundation
 import WatchConnectivity
+import ClockKit
+import WidgetKit
 
 final class WatchConnectivityManager: NSObject, WCSessionDelegate, ObservableObject {
+    static let shared = WatchConnectivityManager()
     var scoreboardUpdateHandler: ((_ status: ScoreboardStatus) -> ())? = nil
     var session: WCSession
     
@@ -24,8 +27,21 @@ final class WatchConnectivityManager: NSObject, WCSessionDelegate, ObservableObj
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
+        print("[watch] didReceiveApplicationContext")
         if scoreboardUpdateHandler != nil {
-            self.scoreboardUpdateHandler!(ScoreboardStatus.fromApplicationContext(applicationContext))
+            ScoreboardStatus.shared.updateFromSerializedData(applicationContext)
+            self.scoreboardUpdateHandler!(ScoreboardStatus.shared)
         }
+    }
+    
+    private func handleScoreUpdate(_ update: [String: Any]) {
+        ScoreboardStatus.shared.updateFromSerializedData(update)
+        if scoreboardUpdateHandler != nil {
+            self.scoreboardUpdateHandler!(ScoreboardStatus.shared)
+        }
+    }
+    
+    func requestScoreboard() {
+        self.session.sendMessage(["request": "score"], replyHandler: handleScoreUpdate)
     }
 }
