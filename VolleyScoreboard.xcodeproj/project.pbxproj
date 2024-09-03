@@ -53,6 +53,7 @@
 		9B982B9A2C44842000E63B43 /* ScoreboardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B982B982C44842000E63B43 /* ScoreboardStatus.swift */; };
 		9B982BA02C44848600E63B43 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B982B9F2C44848600E63B43 /* WatchConnectivityManager.swift */; };
 		9BD7325E2C3A451B00E1B599 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */; };
+		9BDB44F32C8795280072B9A4 /* EnvironmentValuesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDB44F22C8795280072B9A4 /* EnvironmentValuesExtensions.swift */; };
 		9BE626D72C36150E00B38BEE /* VolleyScoreboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */; };
 		9BE626D92C36150E00B38BEE /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE626D82C36150E00B38BEE /* GameListView.swift */; };
 		9BE626DD2C36150F00B38BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE626DC2C36150F00B38BEE /* Assets.xcassets */; };
@@ -164,6 +165,7 @@
 		9B982B982C44842000E63B43 /* ScoreboardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardStatus.swift; sourceTree = "<group>"; };
 		9B982B9F2C44848600E63B43 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		9BD7325D2C3A451B00E1B599 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		9BDB44F22C8795280072B9A4 /* EnvironmentValuesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtensions.swift; sourceTree = "<group>"; };
 		9BE626D32C36150E00B38BEE /* VolleyScoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolleyScoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE626D62C36150E00B38BEE /* VolleyScoreboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyScoreboardApp.swift; sourceTree = "<group>"; };
 		9BE626D82C36150E00B38BEE /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				9B6472972C3C8A5700D515FC /* DateExtensions.swift */,
 				9B01A2832C4089F2002CE40B /* ViewExtensions.swift */,
 				9B01A2852C408A22002CE40B /* UIScreenExtensions.swift */,
+				9BDB44F22C8795280072B9A4 /* EnvironmentValuesExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				9B1DE75C2C3849AE001D25CE /* GameSetListView.swift in Sources */,
 				9B982AEC2C4341DB00E63B43 /* DateSeparatorView.swift in Sources */,
 				9B1DE7102C3661F0001D25CE /* Team.swift in Sources */,
+				9BDB44F32C8795280072B9A4 /* EnvironmentValuesExtensions.swift in Sources */,
 				9B01A2842C4089F2002CE40B /* ViewExtensions.swift in Sources */,
 				9B1DE7122C366239001D25CE /* Game.swift in Sources */,
 				9B2751282C3F4F00007C759D /* GameListItemView.swift in Sources */,

@@ -18,25 +18,23 @@ struct NewGameView: View {
     @State private var setWinnerScore: Int = 15
 
     var body: some View {
-        NavigationStack {
-            Form {
-                TeamPickerView(title: "Time 1", selection: $teamA, teams: teams.filter { teamB?.name != $0.name })
-                TeamPickerView(title: "Time 2", selection: $teamB, teams: teams.filter { teamA?.name != $0.name })
-                Stepper("Pontos por set: \(setWinnerScore)", value: $setWinnerScore, in: 1...100, step: 1)
+        Form {
+            TeamPickerView(title: "Time 1", selection: $teamA, teams: teams.filter { teamB?.name != $0.name })
+            TeamPickerView(title: "Time 2", selection: $teamB, teams: teams.filter { teamA?.name != $0.name })
+            Stepper("Pontos por set: \(setWinnerScore)", value: $setWinnerScore, in: 1...100, step: 1)
+        }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancelar", role: .cancel) {
+                    dismiss()
+                }
             }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar", role: .cancel) {
-                        dismiss()
-                    }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Iniciar jogo", action: startGame)
-                        .disabled(isStartGameDisabled)
-                }
-                ToolbarItem(placement: .principal) {
-                    Text("Novo Jogo")
-                }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Iniciar jogo", action: startGame)
+                    .disabled(isStartGameDisabled)
+            }
+            ToolbarItem(placement: .principal) {
+                Text("Novo Jogo")
             }
         }
     }

@@ -20,9 +20,10 @@ struct GameListView: View {
     @State private var filterEndDate: Date = .now
     @State private var isFiltering = false
     @Binding var tabSelection: Int
+    @StateObject private var navigation = Navigation()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigation.path) {
             List {
                 if isFiltering {
                     HStack {
@@ -42,9 +43,7 @@ struct GameListView: View {
                     if index != 0 && !filteredGames[index - 1].startDate.isSameDay(date: game.startDate) {
                         DateSeparatorView(date: game.startDate)
                     }
-                    NavigationLink {
-                        GameSetListView(game: game)
-                    } label: {
+                    NavigationLink(value: game) {
                         GameListItemView(game: game)
                     }
                 }
@@ -78,7 +77,11 @@ struct GameListView: View {
             .newGameSheet(isPresented: $isPresented)
             .navigationTitle("Jogos")
             .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(for: Game.self) { game in
+                GameSetListView(game: game)
+            }
         }
+        .environment(\.navigation, navigation)
     }
     
     private var filteredGames: [Game] {

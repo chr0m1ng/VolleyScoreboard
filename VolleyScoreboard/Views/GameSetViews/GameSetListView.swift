@@ -15,42 +15,41 @@ struct GameSetListView: View {
     @Bindable var game: Game
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(game.sets.sorted(using: SortDescriptor(\GameSet.name)), id:\.id) { set in
-                    NavigationLink {
-                        ScoreboardView(scoreboard: set.scoreboard!)
-                    } label: {
-                        GameSetListItemView(set: set)
+        List {
+            ForEach(game.sets.sorted(using: SortDescriptor(\GameSet.name)), id:\.id) { set in
+                NavigationLink(destination: ScoreboardView(scoreboard: set.scoreboard!)) {
+                    GameSetListItemView(set: set)
+                }
+            }
+        }
+        .overlay(VStack {
+            if self.game.sets.isEmpty {
+                Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
+                Text("Nenhum set iniciado").padding().font(.title)
+                Button("Novo set", action: createGameSet).padding()
+            }
+        })
+        .listRowSpacing(10)
+        .toolbar {
+            ToolbarItem {
+                Button(action: createGameSet) {
+                    HStack {
+                        Text("Novo set")
+                        Image(systemName: "plus")
                     }
-                }
+                }.disabled(self.game.isFinished)
             }
-            .overlay(VStack {
-                if self.game.sets.isEmpty {
-                    Image(systemName: "list.bullet.rectangle.portrait").imageScale(.large)
-                    Text("Nenhum set iniciado").padding().font(.title)
-                    Button("Novo set", action: createGameSet).padding()
-                }
-            })
-            .listRowSpacing(10)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: createGameSet) {
-                        Label("Novo set", systemImage: "plus")
-                    }.disabled(self.game.isFinished)
-                }
-            }
-            .navigationTitle("Sets")
-            .navigationBarTitleDisplayMode(.large)
-            if game.isFinished {
-                Button(action: game.reopen, label: {
-                    Text("Reabrir Jogo")
-                }).buttonStyle(.borderedProminent).padding(.bottom)
-            } else {
-                Button(role: .destructive, action: finishGame, label: {
-                    Text("Finalizar Jogo")
-                }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
-            }
+        }
+        .navigationTitle("Sets")
+        .navigationBarTitleDisplayMode(.large)
+        if game.isFinished {
+            Button(action: game.reopen, label: {
+                Text("Reabrir Jogo")
+            }).buttonStyle(.borderedProminent).padding(.bottom)
+        } else {
+            Button(role: .destructive, action: finishGame, label: {
+                Text("Finalizar Jogo")
+            }).buttonStyle(.borderedProminent).disabled(self.game.sets.isEmpty || self.game.isFinished).padding(.bottom)
         }
     }
     
