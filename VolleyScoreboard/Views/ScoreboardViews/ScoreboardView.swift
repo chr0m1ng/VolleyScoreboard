@@ -12,6 +12,7 @@ struct ScoreboardView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.navigation) private var navigation
+    @Environment(\.dismiss) private var dismiss
     @Bindable var scoreboard: Scoreboard
     @State private var flipTeams = false
     
@@ -87,7 +88,12 @@ struct ScoreboardView: View {
     
     func finishSet() {
         self.scoreboard.gameSet!.finish()
-        navigation.path = .init()
+        let descriptor = FetchDescriptor<Game>(predicate: #Predicate { !$0.isFinished })
+        if try! modelContext.fetchCount(descriptor) > 1 {
+            navigation.path = .init()
+        } else {
+            dismiss()
+        }
     }
     
     func addPointToA() {

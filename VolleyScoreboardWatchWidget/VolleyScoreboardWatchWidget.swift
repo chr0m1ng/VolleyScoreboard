@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    var currentEntry: Entry {
+    var currentEntry: ScoreboardEntry {
         .init(
             date: .now, 
             scoreboardUpdate: ScoreboardStatus.shared
@@ -25,7 +25,7 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<ScoreboardEntry>) -> ()) {
         var entries: [ScoreboardEntry] = []
         let entry = ScoreboardEntry(date: Date(), scoreboardUpdate: ScoreboardStatus.shared)
         entries.append(entry)
